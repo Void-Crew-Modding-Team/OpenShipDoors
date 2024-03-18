@@ -18,7 +18,7 @@ namespace OpenShipDoors
             Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), MyPluginInfo.PLUGIN_GUID);
 
-            Bindings.OpenDoorsOnStart = Config.Bind("OpenShipDoors", "OpenShipDoorsOnStart", false);
+            Bindings.OpenDoorsOnStart = Config.Bind("OpenShipDoors", "OpenShipDoorsOnStart", true);
         }
 
 
