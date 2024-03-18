@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using System.Reflection;
@@ -16,6 +17,14 @@ namespace OpenShipDoors
             Log = Logger;
             Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), MyPluginInfo.PLUGIN_GUID);
+
+            Bindings.OpenDoorsOnStart = Config.Bind("OpenShipDoors", "OpenShipDoorsOnStart", false);
+        }
+
+
+        internal class Bindings
+        {
+            internal static ConfigEntry<bool> OpenDoorsOnStart;
         }
     }
 }

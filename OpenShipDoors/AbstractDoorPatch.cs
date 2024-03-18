@@ -8,7 +8,7 @@ namespace OpenShipDoors
     {
         static void Prefix(AbstractDoor __instance, ref bool ___isOpen)
         {
-            if (__instance is AirlockDoor) return;
+            if (__instance is AirlockDoor || !BepinPlugin.Bindings.OpenDoorsOnStart.Value) return;
             ___isOpen = true;
         }
     }
