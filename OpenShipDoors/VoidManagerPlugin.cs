@@ -8,6 +8,6 @@ namespace OpenShipDoors
 
         public override string Author => "18107, Dragon";
 
-        public override string Description => "Opens ship doors on game startup";
+        public override string Description => "Opens ship doors on game startup. Host-Side";
     }
 }

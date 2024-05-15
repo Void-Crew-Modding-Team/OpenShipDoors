@@ -19,12 +19,16 @@ namespace OpenShipDoors
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), MyPluginInfo.PLUGIN_GUID);
 
             Bindings.OpenDoorsOnStart = Config.Bind("OpenShipDoors", "OpenShipDoorsOnStart", true);
+            Bindings.OpenInnerAirlock = Config.Bind("OpenShipDoors", "OpenInnerAirlock", true);
+            Bindings.OpenOuterAirlock = Config.Bind("OpenShipDoors", "OpenOuterAirlock", false);
         }
 
 
         internal class Bindings
         {
             internal static ConfigEntry<bool> OpenDoorsOnStart;
+            internal static ConfigEntry<bool> OpenInnerAirlock;
+            internal static ConfigEntry<bool> OpenOuterAirlock;
         }
     }
 }
